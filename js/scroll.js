@@ -1,3 +1,4 @@
+/*Scroll*/
 $(document).ready(function () {
     var altura = $('.fixed-top2').offset().top;
 
