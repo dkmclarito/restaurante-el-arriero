@@ -46,7 +46,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Inicio <i class="fas fa-house-user"></i></a>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="empleos.html">Empleos <i class="fas fa-users"></i> </a>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="empleos.php">Empleos <i class="fas fa-users"></i> </a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="acerca-de.html">¿Quiénes
                             somos <i class="fas fa-question"></i></a></li>
@@ -80,26 +80,21 @@
             <!-- Contact Section Form-->
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xl-7">
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+
+                    <form action="conexion.php" method="post">
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                data-sb-validations="required" />
-                            <label for="name">Nombre Completo</label>
+                            <input class="form-control" id="name" type="text" placeholder="Nombre completo..."
+                                data-sb-validations="required" name="nombre"/>
+                            <label for="name">Nombre y Apellido</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">El Nombre Es Requerido.</div>
                         </div>
-                        <!-- Email address input-->
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                data-sb-validations="required,email" />
-                            <label for="email">Email</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">El Email no es válido.</div>
-                        </div>
+                 
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                data-sb-validations="required" />
+                            <input class="form-control" id="phone" type="tel" placeholder="(503) 7566-3932"
+                                data-sb-validations="required" name="telefono"/>
                             <label for="phone">Número de Teléfono</label>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">El Número de teléfono es Requerido.
                             </div>
@@ -107,8 +102,8 @@
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text"
-                                placeholder="Enter your message here..." style="height: 10rem"
-                                data-sb-validations="required"></textarea>
+                                placeholder="Ecribe tu mensaje" style="height: 10rem"
+                                data-sb-validations="required" name="mensaje"></textarea>
                             <label for="message">Mensaje</label>
                             <div class="invalid-feedback" data-sb-feedback="message:required">El Mensaje es Requerido.
                             </div>
@@ -128,8 +123,11 @@
                             <div class="text-center text-danger mb-3">Error al elviar el mensaje!</div>
                         </div>
                         <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+                        <button class="btn btn-primary btn-xl " id="submitButton" type="submit">Enviar</button>
                     </form>
+
+
+
                 </div>
             </div>
         </div>
