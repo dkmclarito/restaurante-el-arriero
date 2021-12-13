@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <?php
+    $conexion = mysqli_connect('localhost', 'root', '', 'empleos');
+   ?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -66,12 +68,50 @@
         </div>
     </header>
 
-
+    <style>
+    #mensajes{
+        width: 70%;
+        margin-left: 15%;
+    }
+</style>
 
     <!-- Contact Section-->
-    <section class="page-section" id="empleos">
-        <h1>Base de datos que contendrá los empleos actuales, podremos actualizar y eliminar</h1>
+
+
+    <section class="page-section" id="mensajes">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Horario Laboral</th>
+      <th scope="col">Experiencia Laboral</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php
+      $sql = "SELECT * FROM datos";
+      $resultado = mysqli_query($conexion, $sql);
+
+      while($mostrar = mysqli_fetch_array($resultado)){
+
+        ?>
+      
+    <tr>
+      <td><?php echo $mostrar['nombre'] ?></td>
+      <td><?php echo $mostrar['horas'] ?></td>
+      <td><?php echo $mostrar['experiencia'] ?></td>
+      <td><a href="https://api.whatsapp.com/send?phone=50375663930" target="_blank">Enviar CV</a></td>
+    </tr>
+
+  </tbody>
+  <?php
+      }
+?>
+</table>
     </section>
+
+
     <!-- Footer-->
     <footer class="footer text-center">
         <div class="container">
